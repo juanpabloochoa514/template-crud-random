@@ -5,14 +5,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 @Entity
-//@Table(name="shirt_table")
+@Table(name="shirt")
 public class Shirt {
 	
 	public Shirt() {
 		
 	}
-	
+	public Shirt(String model) {
+		this.model=model;
+	}
 	public Shirt(String model,String markModel, Double priceShirt) {
 		this.model=model;
 		this.markModel=markModel;
@@ -24,9 +27,9 @@ public class Shirt {
 	private Integer id;
 	@Column(name="shirt_model")
 	private String model;
-	@Column(name="shirt_markModel")
+	@Column(name="shirt_mark_model")
 	private String markModel;
-	@Column(name="shirt_priceShirt")
+	@Column(name="shirt_price_shirt")
 	private Double priceShirt;
 	public Integer getId() {
 		return id;
