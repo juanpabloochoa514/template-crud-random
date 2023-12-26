@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,13 +47,23 @@ public class ShirtController {
 		}
 	}
 	
-	@PatchMapping("/{idShirt}")
-	public ResponseEntity<String>updateShirPerModel( @RequestBody String model, @PathVariable(value="idShirt") Integer id){
+	@PutMapping("/{modelShirt}/{idShirt}")
+	public ResponseEntity<String>updateShirPerModel( @PathVariable(value="modelShirt") String model, @PathVariable(value="idShirt") Integer id){
 		try {
 			shirtServiceImpl.updatePerModel(model, id);
 			return ResponseEntity.status(200).body("Shirt updated ");
 		}catch(Exception e) {
 			return ResponseEntity.status(404).body("shirt not updated, not found");
+		}
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<String> deleteShirt (@PathVariable(value="id") Integer id){
+		try {
+			shirtServiceImpl.deleteSirtById(id);
+			return ResponseEntity.status(200).body(" shirt delete");
+		}catch(Exception e) {
+			return ResponseEntity.status(500).body("interal error");
 		}
 	}
 	

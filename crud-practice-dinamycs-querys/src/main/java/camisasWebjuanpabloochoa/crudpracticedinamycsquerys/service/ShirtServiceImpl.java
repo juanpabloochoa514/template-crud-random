@@ -48,10 +48,19 @@ public class ShirtServiceImpl {
 			}
 	}
 	
+	public void deleteSirtById(Integer id) {
+		try {
+			shirtRepository.deleteShirtWithId(id);
+		}catch(Exception e) {
+			log.error(" error to delete "+e+" whit id "+id);
+		}
+	}
+
 	public Shirt convertToEntity(ShirtDto shirtDto)throws ParseException {
 		Shirt shirt = modelMapper.map(shirtDto, Shirt.class);
 		return shirt;
 	}
 
+	
 	
 }
