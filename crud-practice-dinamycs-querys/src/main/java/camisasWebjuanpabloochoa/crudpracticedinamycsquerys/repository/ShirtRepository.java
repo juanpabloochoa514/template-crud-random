@@ -24,8 +24,4 @@ public interface ShirtRepository extends JpaRepository<Shirt, Integer> {
 	@Modifying
 	@Query(value="DELETE FROM shirt st WHERE st.id = :idShirt ", nativeQuery = true)
 	void deleteShirtWithId(@Param("idShirt")Integer id);
-	//	@Query(value = "SELECT * FROM users u WHERE u.username = :username AND u.email = :email", nativeQuery = true)
-//    List<User> findUsersByNativeQuery(@Param("username") String username, @Param("email") String email);
-//	@Query(value="INSERT INTO shirt (shirt_model)",nativeQuery=true)
-//	void saveForModel();
 }
