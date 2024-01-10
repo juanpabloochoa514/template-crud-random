@@ -1,10 +1,11 @@
 # template-crud-random
 <html>
   <head>
-    <li>This is a template of CRUD, where i create a object shirt</li>
+    <li>Este proyecto es una plantilla de un crud básico. Para ser usado en cualquier caso de uso.</li>
   </head>
   <body>
-   <img src="https://drive.google.com/file/d/1w6wzbTuJSHhaeXTkXEMBP_s5CJgeqyHG/view?usp=drive_link">
-    <li>In this capture you can see the manually query. Whitout use the framework of spring boot 3</li>
+  <li>En la carpeta repository se puede observar las consultas dinamicas, realizadas manualmente. Se observan update, delete y listar.</li>
+  <li> <small>Use el metodo save() de la interface de JpaRepository Para trabajar mas rapido. Podría haber hecho una consulta con el lenguaje de sql. De la siguiente manera: INSERT INTO shirt columnas VALUES valores a ingresar</small></li>
+  
   </body>
 </html>
